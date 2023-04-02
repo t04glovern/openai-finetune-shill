@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ask a Technical Question</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+      body {
+        background-color: #fff;
+        font-size: 16px;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      h1 {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 36px;
+        color: #ec9a2f;
+      }
+      h4 {
+        text-align: center;
+      }
+      .panel {
+        border-radius: 0;
+        box-shadow: none;
+        border: none;
+      }
+      .panel-body {
+        padding-top: 10px;
+      }
+      label {
+        font-weight: bold;
+      }
+      input[type=text] {
+        border-radius: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+        height: 40px;
+        font-size: 16px;
+        color: #ec9a2f;
+        border-color: #ec9a2f;
+      }
+      button[type=submit] {
+        border-radius: 30px;
+        padding-left: 30px;
+        padding-right: 30px;
+        height: 40px;
+        font-size: 16px;
+        font-weight: bold;
+        color: #fff;
+        background-color: #ec9a2f;
+        border-color: #ec9a2f;
+        margin-left: 10px;
+      }
+      .question {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        margin-top: 5px;
+      }
+      .question h2 {
+        font-size: 20px;
+        font-weight: bold;
+        margin-top: 0;
+        margin-bottom: 10px;
+        color: #ec9a2f;
+      }
+      .question p {
+        font-size: 16px;
+        margin-top: 0;
+        margin-bottom: 0;
+        color: #333;
+      }
+      .response {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        margin-top: 5px;
+      }
+      .response h2 {
+        font-size: 20px;
+        font-weight: bold;
+        margin-top: 0;
+        margin-bottom: 10px;
+        color: #ec9a2f;
+      }
+      .response p {
+        font-size: 16px;
+        margin-top: 0;
+        margin-bottom: 0;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Ask a Technical Question</h1>
+      <h4>to an AWS CDK user</h4>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <form method="POST">
+            <div class="form-group">
+              <input type="text" class="form-control" id="question" name="question">
+            </div>
+            <button type="submit" class="btn btn-primary">Ask</button>
+          </form>
+        </div>
+      </div>
+      {% if question %}
+      <div class="question">
+        <h2>Your question:</h2>
+        <p>{{ question }}</p>
+      </div>
+      {% endif %}
+      
+      {% if response %}
+      <div class="response">
+        <h2>Our response:</h2>
+        <p>{{ response }}</p>
+      </div>
+      {% endif %}
+    </div>
+  </body>
+</html>
